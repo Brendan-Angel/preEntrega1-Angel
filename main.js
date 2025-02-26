@@ -6,7 +6,8 @@ const secciones = {
         opcionesSeccion:[" A. Entrar a la Sección de Libros",
             " | B. Entrar a la Sección de Videojuego", 
             " | C. Entrar a la Sección de Deportes", 
-            " | D. Entrar a la Sección Personalizada"]
+            " | D. Entrar a la Sección Personalizada",
+            ` | Para salir, presione ESC o "cancelar"`]
     }
 }
 /* secciones por bloques */
@@ -47,13 +48,13 @@ const loopOpciones = () => {
     while(loop == false){
         /* VER COMO HACER QUE SE PONGAN UNO DEBAJO DEL OTRO */
         opcionAElegir = prompt(`${secciones.opciones.seccionGeneral}\n${"\n"+secciones.opciones.opcionesSeccion}`)
-        if (opcionAElegir == "a") {
-            alert(`${seccionA.contenido.tituloSeccion}\n${"\n"+seccionA.contenido.$("\n")+contenidoSeccion}`)
-        } else if (opcionAElegir == "b") {
+        if (opcionAElegir == "a" || opcionAElegir == "A") {
+            alert(`${seccionA.contenido.tituloSeccion}\n${"\n"+seccionA.contenido.contenidoSeccion}`)
+        } else if (opcionAElegir == "b" || opcionAElegir == "B") {
             alert(`${seccionB.contenido.tituloSeccion}\n${"\n"+seccionB.contenido.contenidoSeccion}`)
-        } else if (opcionAElegir == "c") {
+        } else if (opcionAElegir == "c" || opcionAElegir == "C") {
             alert(`${seccionC.contenido.tituloSeccion}\n${"\n"+seccionC.contenido.contenidoSeccion}`)
-        } else if (opcionAElegir == "d") {
+        } else if (opcionAElegir == "d" || opcionAElegir == "D") {
             alert(`${seccionD.contenido.tituloSeccion}\n${"\n"+seccionD.contenido.contenidoSeccion}`)
         } else if (opcionAElegir == null) {
             // CONTINUAR O SALIR DEL LOOP //
@@ -64,8 +65,8 @@ const loopOpciones = () => {
 
 const aplicacion = () => {
     /* introduccion y saludo al usuario */
-    const usuario = prompt("Bienvenido a tu bloc de notas. Por favor, introduzca su nombre: ")
-    while (usuario === "" || usuario === null) {
+    let usuario = prompt("Bienvenido a tu bloc de notas. Por favor, introduzca su nombre: ")
+    while (usuario === "" || usuario === null ) {
         alert(`Nombre no definido`)
         usuario = prompt("Por favor, introduzca su nombre: ")
     }
