@@ -1,5 +1,5 @@
 //22:20 miercoles 26 termina la pre entrega
-/* secciones general */
+/* menú principal */
 const secciones = {
     opciones: {
         seccionGeneral:"¿Qué desea hacer?",
@@ -42,7 +42,7 @@ const seccionD = {
         contenidoSeccion:["Sin contenido por añadir..."]
     }
 }
-
+/* respuesta del usuario para elegir una seccion y que ingrese */
 const loopOpciones = () => {
     let loop = false
     while(loop == false){
